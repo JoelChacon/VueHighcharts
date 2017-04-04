@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS Practice</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <style>
+        .data_update_toggle_wrapper {
+            text-align: center;
+        }
+        #btn_toggle_data {
+            background-color: white;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        
+        <highcharts :options="options" ref="highcharts"></highcharts>
+        
+        <div class="data_update_toggle_wrapper">
+            <input type="checkbox" v-model="toggle_data"> Update with random data - {{ toggle_data }}
+            <div>
+                <label for="btn_toggle_data">Toggle Auto Update</label>
+                <button class="btn btn-default" id="btn_toggle_data" v-on:click="btnDataUpdateTogle">{{ toggle_data }}</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/highcharts/highcharts.js"></script>
+    <script src="https://unpkg.com/vue-highcharts/dist/vue-highcharts.min.js"></script>
+    <script src="vue_app.js"></script>
+</body>
+
+</html>
